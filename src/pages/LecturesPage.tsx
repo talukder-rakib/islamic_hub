@@ -11,7 +11,7 @@ const lectures = [
     duration: '45:20',
     date: '2023-05-15',
     category: 'কুরআন',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube.com/embed/ET679-I6Z2k?si=K7YxDMK3tj43gcYa',
     description: 'কুরআন কারীম বুঝার সঠিক পদ্ধতি এবং তাফসীর পাঠের নিয়ম সম্পর্কে বিস্তারিত আলোচনা।',
   },
   {
@@ -21,7 +21,7 @@ const lectures = [
     duration: '38:15',
     date: '2023-06-22',
     category: 'নামাজ',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube.com/embed/ET679-I6Z2k?si=K7YxDMK3tj43gcYa',
     description: 'নামাজের গুরুত্ব, ফজিলত এবং সঠিকভাবে নামাজ আদায় করার নিয়ম সম্পর্কে আলোচনা।',
   },
   {
@@ -31,7 +31,7 @@ const lectures = [
     duration: '50:30',
     date: '2023-03-10',
     category: 'রমজান',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube.com/embed/ET679-I6Z2k?si=K7YxDMK3tj43gcYa',
     description: 'রমজান মাসে কিভাবে সর্বোত্তম উপায়ে উপবাস পালন করা যায় এবং এই মাসের আমল সম্পর্কে আলোচনা।',
   },
 ];
