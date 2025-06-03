@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { Suspense, useEffect } from 'react'; // Added Suspense
 import { Routes, Route } from 'react-router-dom';
 import { useDirection } from './contexts/DirectionContext';
 import { useTheme } from './contexts/ThemeContext';
@@ -7,18 +7,18 @@ import { useTheme } from './contexts/ThemeContext';
 import Layout from './components/layout/Layout';
 import MobileNavigation from './components/layout/MobileNavigation';
 
-// Pages
-import HomePage from './pages/HomePage';
-import QuranPage from './pages/QuranPage';
-import HadithPage from './pages/HadithPage';
-import PrayerTimesPage from './pages/PrayerTimesPage';
-import ZakatCalculatorPage from './pages/ZakatCalculatorPage';
-import BooksPage from './pages/BooksPage';
-import LecturesPage from './pages/LecturesPage';
-import DuaPage from './pages/DuaPage';
-import DonatePage from './pages/DonatePage';
-import ContactPage from './pages/ContactPage';
-import NotFoundPage from './pages/NotFoundPage';
+// Pages - Lazy Loaded
+const HomePage = React.lazy(() => import('./pages/HomePage'));
+const QuranPage = React.lazy(() => import('./pages/QuranPage'));
+const HadithPage = React.lazy(() => import('./pages/HadithPage'));
+const PrayerTimesPage = React.lazy(() => import('./pages/PrayerTimesPage'));
+const ZakatCalculatorPage = React.lazy(() => import('./pages/ZakatCalculatorPage'));
+const BooksPage = React.lazy(() => import('./pages/BooksPage'));
+const LecturesPage = React.lazy(() => import('./pages/LecturesPage'));
+const DuaPage = React.lazy(() => import('./pages/DuaPage'));
+const DonatePage = React.lazy(() => import('./pages/DonatePage'));
+const ContactPage = React.lazy(() => import('./pages/ContactPage'));
+const NotFoundPage = React.lazy(() => import('./pages/NotFoundPage'));
 
 function App() {
   const { direction } = useDirection();
@@ -42,21 +42,23 @@ function App() {
 
   return (
     <div className={`font-bengali min-h-screen ${direction === 'rtl' ? 'rtl' : 'ltr'}`}>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route path="/quran" element={<QuranPage />} />
-          <Route path="/hadith" element={<HadithPage />} />
-          <Route path="/prayer-times" element={<PrayerTimesPage />} />
-          <Route path="/zakat-calculator" element={<ZakatCalculatorPage />} />
-          <Route path="/books" element={<BooksPage />} />
-          <Route path="/lectures" element={<LecturesPage />} />
-          <Route path="/dua" element={<DuaPage />} />
-          <Route path="/donate" element={<DonatePage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Route>
-      </Routes>
+      <Suspense fallback={<div>Loading...</div>}> {/* Added Suspense here */}
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+            <Route path="/quran" element={<QuranPage />} />
+            <Route path="/hadith" element={<HadithPage />} />
+            <Route path="/prayer-times" element={<PrayerTimesPage />} />
+            <Route path="/zakat-calculator" element={<ZakatCalculatorPage />} />
+            <Route path="/books" element={<BooksPage />} />
+            <Route path="/lectures" element={<LecturesPage />} />
+            <Route path="/dua" element={<DuaPage />} />
+            <Route path="/donate" element={<DonatePage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
+        </Routes>
+      </Suspense>
       <MobileNavigation />
     </div>
   );

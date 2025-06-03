@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react'; // Added memo
 import { motion } from 'framer-motion';
 
 interface DailyContentProps {
@@ -67,4 +67,4 @@ const DailyContent: React.FC<DailyContentProps> = ({ type }) => {
   );
 };
 
-export default DailyContent;
+export default memo(DailyContent); // Wrapped with memo

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react'; // Added memo
 import { Clock } from 'lucide-react';
 // Note: adhan library is for calculating prayer times
 import { Coordinates, CalculationMethod, PrayerTimes } from 'adhan';
@@ -96,4 +96,4 @@ const PrayerTimesWidget: React.FC = () => {
   );
 };
 
-export default PrayerTimesWidget;
+export default memo(PrayerTimesWidget); // Wrapped with memo

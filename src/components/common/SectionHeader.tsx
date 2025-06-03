@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react'; // Added memo
 import { motion } from 'framer-motion';
 
 interface SectionHeaderProps {
@@ -26,4 +26,4 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({ title, subtitle }) => {
   );
 };
 
-export default SectionHeader;
+export default memo(SectionHeader); // Wrapped with memo

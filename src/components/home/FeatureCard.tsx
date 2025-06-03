@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react'; // Added memo
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { DivideIcon as LucideIcon } from 'lucide-react';
@@ -30,4 +30,4 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon, lin
   );
 };
 
-export default FeatureCard;
+export default memo(FeatureCard); // Wrapped with memo
