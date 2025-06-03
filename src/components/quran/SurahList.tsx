@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react'; // Added memo
 import { motion } from 'framer-motion';
 
+// TODO: If this list grows significantly (e.g., to display all 114 Surahs),
+// consider implementing virtualization (e.g., using react-window) for performance.
 // Simplified sample data - in a real app, this would be more comprehensive
 const surahs = [
   { id: 1, name: 'আল-ফাতিহা', arabicName: 'الفاتحة', verses: 7, revelation: 'মক্কী' },
@@ -54,4 +56,4 @@ const SurahList: React.FC = () => {
   );
 };
 
-export default SurahList;
+export default memo(SurahList); // Wrapped with memo
