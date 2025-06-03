@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'; // Added useEffect
-import { useAuth } from '../contexts/AuthContext';
+import { useAuth } from 'src/contexts/AuthContext';
 import { Navigate, useLocation } from 'react-router-dom'; // Added Navigate and useLocation
 
 const LoginPage: React.FC = () => {
