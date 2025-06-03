@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from 'src/contexts/AuthContext'; // Assuming user info might be pre-filled or used
+import { useAuth } from '../contexts/AuthContext'; // Assuming user info might be pre-filled or used
 
 interface ProfileData {
   needs: string;
