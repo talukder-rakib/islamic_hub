@@ -68,7 +68,7 @@ const HomePage: React.FC = () => {
         transition={{ duration: 0.8 }}
       >
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-          ইসলামিক হাব - আপনার ডিজিটাল ইসলামিক কেন্দ্র
+          Hidaya - আপনার ডিজিটাল ইসলামিক কেন্দ্র
         </h1>
         <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
           কুরআন, হাদিস, দোয়া, নামাজের সময় ও ইসলামিক জ্ঞানের জন্য আপনার একটি সম্পূর্ণ প্লাটফর্ম
